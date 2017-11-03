@@ -1,0 +1,24 @@
+<mat-grid-list cols="1" rowHeight="320px">
+    <mat-grid-tile *ngFor="let book of AllBooks">
+  <mat-card class="example-card" >
+    <mat-card-header>
+      <mat-card-title>{{book.title}}</mat-card-title>
+      <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-sm-image src="http://www.ravindersinghonline.com/images/covers/cover1.jpg" alt="Photo of the book">
+    <mat-card-content>
+      <p></p>
+      <p>
+        {{book.description}}
+      </p>
+      <mat-chip-list>
+        <mat-chip color= "primary" selected="true" *ngFor="let genre of book.genre">{{genre}}</mat-chip>
+      </mat-chip-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE <mat-icon class="example-icon">favorite</mat-icon></button>
+      <button mat-button>ISSUE</button>
+    </mat-card-actions>
+  </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
